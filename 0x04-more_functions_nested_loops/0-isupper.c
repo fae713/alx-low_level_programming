@@ -7,7 +7,7 @@
  * Return: 1 for upper letter or 0 for anything else
  */
 
-int _iaupper(int x)
+int _isupper(int x)
 
 {
 
