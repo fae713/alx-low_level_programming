@@ -1,5 +1,3 @@
-dd_node_end.c
-
 #include <stdlib.h>
 #include <string.h>
 #include "lists.h"
