@@ -9,22 +9,22 @@
 
 int pop_listint(listint_t **head)
 {
-	listint_t *pop_del;
+	listint_t *popdel;
 
-	int node_data;
+	int nodedata;
 
 	if (*head == NULL)
 
 	return (0);
 
-	pop_del = *head;
+	popdel = *head;
 
-	node_data = pop_del->n;
+	nodedata = popdel->n;
 
-	free(pop_del);
+	free(popdel);
 
 	*head = (*head)->next;
 
-	return (node_data);
+	return (nodedata);
 
 }
