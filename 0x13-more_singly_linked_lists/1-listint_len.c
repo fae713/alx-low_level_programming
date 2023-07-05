@@ -1,7 +1,4 @@
-#include <stdio.io>
 #include "lists.h"
-#include <string.h>
-#include <stdlib.h>
 /**
  * listint_len - returns the number of nodes in a linked lists
  * @h: a pointer to the head of the list
