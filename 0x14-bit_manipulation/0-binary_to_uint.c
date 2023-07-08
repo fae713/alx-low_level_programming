@@ -9,24 +9,24 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int ui;
-	int len, base_two;
+	int num, base_two;
 
 	if (!b)
 		return (0);
 
 	ui = 0;
 
-	for (len = 0; b[len] != '\0'; len++)
+	for (num = 0; b[num] != '\0'; num++)
 		;
 
-	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
+	for (num--, base_two = 1; num >= 0; num--, base_two *= 2)
 	{
-		if (b[len] != '0' && b[len] != '1')
+		if (b[num] != '0' && b[num] != '1')
 		{
 			return (0);
 		}
 
-		if (b[len] & 1)
+		if (b[num] & 1)
 		{
 			ui += base_two;
 		}
