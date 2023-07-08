@@ -11,30 +11,30 @@
  */
 unsigned int binary_to_uint(const char *b);
 {
-	unsigned int n, i;
+	unsigned int ui;
+	int num, base_two;
 
-	if (!b || !*b)
-
-	return (0);
-
-	n = i = 0;
-
-	while (b[i])
-	{
-		if (b[i] > 50)
-
+	if (!b)
 		return (0);
 
-		else if (b[i] == 50)
+	ui = 0;
+
+	for (num = 0; b[num] != '\0'; num++)
+		;
+
+	for (num--, base_two = 1; num >= 0; num--, base_two *= 2)
+	{
+		if (b[num] != '0' && b[num] != '1')
 		{
-			n <<= 1;
-			n += 1;
+			return (0);
 		}
-		else
-			n <<= 1;
-		i++;
+
+		if (b[num] & 1)
+		{
+			ui += base_two;
+		}
 	}
 
-	return (n);
+	return (ui);
 }
 
