@@ -3,35 +3,52 @@
  * main - write a function that converts number to an unsigned int
  *
  * binary_to_uint: converts binary to unsigned int
+ *
  * @b: is string to onvert to binary
  *
  * Return: unsigned int or 0
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int ui;
-	int num, base_two;
+unsigned int decimal = 0;
 
-	if (!b)
-		return (0);
+int str_len = 0, base = 1;
 
-	ui = 0;
+if (!check_valid_string(b))
 
-	for (num = 0; b[num] != '\0'; num++)
-		;
+return (0);
 
-	for (num--, base_two = 1; num >= 0; num--, base_two *= 2)
-	{
-		if (b[num] != '0' && b[num] != '1')
-		{
-			return (0);
-		}
+while (b[str_len] != '\0')
 
-		if (b[num] & 1)
-		{
-			ui += base_two;
-		}
-	}
+str_len++;
 
-	return (ui);
+while (str_len)
+{
+decimal += ((b[str_len - 1] - '0') * base);
+
+base *= 2;
+
+str_len--;
+}
+return (decimal);
+}
+
+/**
+ * check_valid_string - checks if a string has only 0's and 1's
+ * @b: string to be checked
+ *
+ * Return: 1 if string is valid, 0 otherwise
+ */
+int check_valid_string(const char *b)
+{
+if (b == NULL)
+return (0);
+
+while (*b)
+{
+if (*b != '1' && *b != '0')
+return (0);
+b++;
+}
+return (1);
 }
