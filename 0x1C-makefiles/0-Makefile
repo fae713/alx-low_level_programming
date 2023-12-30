@@ -1,0 +1,9 @@
+.PHONY: all
+
+CC = gcc #compiler to use
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+all: school
+
+school:
+	${CC} ${CFLAGS} -o school main.c school.c
