@@ -1,7 +1,8 @@
-#ifndef HEADER_FILE
-#define HEADER_FILE
+#ifndef SEARCH_ALGOS_H
+#define SEARCH_ALGOS_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 
 /* Prototypes
  */
